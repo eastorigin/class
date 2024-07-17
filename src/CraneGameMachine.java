@@ -7,7 +7,6 @@ public class CraneGameMachine {
 	public void insertCoin() {
 		if(dolls > 0) {
 			isInsertCoin = true;
-			doGame();
 		}
 	}
 	
@@ -16,21 +15,30 @@ public class CraneGameMachine {
 			Random random = new Random();
 			int number = random.nextInt(2);
 			if(number == 1) {
+				dolls--;
 				isInsertCoin = false;
-				return dolls--;
+				return number;
 			}else {
 				isInsertCoin = false;
-				return dolls;
+				return number;
 			}
 		}else {
-			return dolls;
+			return -1;
 		}
 	}
 	
 	public static void main (String[] args) {
 		CraneGameMachine start = new CraneGameMachine();
-		start.dolls = 10;
+		start.dolls = 100;
 		start.insertCoin();
-		System.out.println(start.dolls);
+		int result = start.doGame();
+		if(result == 1) {
+			System.out.println("인형 뽑기 성공");
+		}else if(result == 0) {
+			System.out.println("인형 뽑기 실패");
+		} else {
+			System.out.println("동전을 넣지 않았습니다");
+		}
+		System.out.println("인형 개수: " + start.dolls);
 	}
 }
