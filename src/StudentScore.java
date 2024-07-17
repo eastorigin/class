@@ -42,10 +42,10 @@ public class StudentScore {
 	public static void main (String[] args) {
 		
 		StudentScore student = new StudentScore(); // 특정 학생이라고 구체화 됐기 때문에 점수를 정의할 수 있다
-		student.java = 53;
-		student.python = 50;
-		student.cpp = 50;
-		student.csharp = 53;
+		student.java = 63;
+		student.python = 70;
+		student.cpp = 80;
+		student.csharp = 93;
 		// 추상화 클래스를 구체화 한 후 정의 가능
 		
 		int sum = student.getSumAllScores();
