@@ -8,8 +8,6 @@ public class CraneGameMachine {
 		if(dolls > 0) {
 			isInsertCoin = true;
 			doGame();
-		}else {
-			System.out.println(isInsertCoin);
 		}
 	}
 	
@@ -31,8 +29,7 @@ public class CraneGameMachine {
 	
 	public static void main (String[] args) {
 		CraneGameMachine start = new CraneGameMachine();
-		System.out.println(start.isInsertCoin);
-		start.dolls = 0;
+		start.dolls = 10;
 		start.insertCoin();
 		System.out.println(start.dolls);
 	}
